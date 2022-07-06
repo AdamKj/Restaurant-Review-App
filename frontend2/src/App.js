@@ -56,11 +56,7 @@ function App() {
             path="/restaurants/:id"
             element={(props) => <Restaurant {...props} user={user} />}
           />
-          <Route
-            exact
-            path="/login"
-            element={(props) => <Login {...props} login={login()} />}
-          />
+          <Route exact path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>
