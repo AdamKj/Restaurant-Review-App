@@ -35,7 +35,7 @@ function App() {
                 Logout {user.name}
               </a>
             ) : (
-              <Link to={"/login"} className="nav-link">
+              <Link to="/login" className="nav-link">
                 Login
               </Link>
             )}
@@ -45,21 +45,21 @@ function App() {
 
       <div className="conatiner mt-3">
         <Routes>
-          <Route exact path="/restaurants" element={RestaurantsList()} />
+          <Route exact path="/restaurants" element={<RestaurantsList />} />
           <Route
             exact
             path="/restaurants/:id/review"
-            render={(props) => <AddReview {...props} user={user} />}
+            element={(props) => <AddReview {...props} user={user} />}
           />
           <Route
             exact
             path="/restaurants/:id"
-            render={(props) => <Restaurant {...props} user={user} />}
+            element={(props) => <Restaurant {...props} user={user} />}
           />
           <Route
             exact
             path="/login"
-            render={(props) => <Login {...props} login={login} />}
+            element={(props) => <Login {...props} login={login()} />}
           />
         </Routes>
       </div>
