@@ -69,7 +69,7 @@ const RestaurantList = (props) => {
   };
 
   const findByCuisine = () => {
-    if (searchCuisine == "All Cuisines") {
+    if (searchCuisine === "All Cuisines") {
       retrieveRestaurants();
     } else {
       find(searchCuisine, "cuisine");
